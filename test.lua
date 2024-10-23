@@ -2,7 +2,7 @@ _G.AutoMarket = true
 _G.AutoMarket2 = true
 
 function automarket()
-    while _G.AutoMarket == true do
+    while _G.AutoMarket = true do
         autobuymarkets2()
         wait(600)
     end
