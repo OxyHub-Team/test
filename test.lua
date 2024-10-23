@@ -3,9 +3,12 @@ _G.AutoMarket2 = true
 
 function autobuymarkets2()
     local merchantids = {6,5,4,3,2,1}
-    for i = 1, do
-        for _, id in ipairs(merchantids) do
-            local args = {"StandardMerchant", id}
+    for i = 1, 5 do
+        for _, id in ipairs(merchantIds) do
+            local args = {
+                [1] = "StandardMerchant",
+                [2] = id
+            }
 
             game:GetService("ReplicatedStorage").Network.CustomMerchants_Purchase:InvokeServer(unpack(args))
         end
