@@ -1,14 +1,24 @@
 _G.AutoMarket = true
 _G.AutoMarket2 = true
 
-function autobuymarkets()
-    for i = 1, 4 do
-        local args = {
-            [1] = "StandardMerchant",
-            [2] = 3
-        }
-        
-        game:GetService("ReplicatedStorage").Network.CustomMerchants_Purchase:InvokeServer(unpack(args))
+function automarket()
+    while _G.AutoMarket == do
+        autobuymarkets2()
+        wait(600)
+    end
+end
+
+function autobuymarkets2()
+    local merchantids = {6,5,4,3,2,1}
+    for i = 1, do
+        for _, id in ipairs(merchantids) do
+            local args = {
+                [1] = "StandartMerchant",
+                [2] = id
+            }
+
+            game:GetService("ReplicatedStorage").Network.CustomMerchants_Purchase:InvokeServer(unpack(args))
+        end
     end
 end
 
@@ -47,7 +57,7 @@ local Window = Rayfield:CreateWindow({
     CurrentValue = false,
     Flag = "Toggle15", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
-        _G.AutoMarket2 = Value
-        autobuymarkets()
+        _G.AutoMarket = Value
+        autobuymarket()
     end,
  })
