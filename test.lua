@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OxyHub-Team/test/refs/heads/main/test.lua"))()
 
 _G.CheckPets = true
 
