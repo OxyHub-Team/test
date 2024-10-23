@@ -1,13 +1,6 @@
 _G.AutoMarket = true
 _G.AutoMarket2 = true
 
-function automarket()
-    while _G.AutoMarket = true do
-        autobuymarkets2()
-        wait(600)
-    end
-end
-
 function autobuymarkets2()
     local merchantids = {6,5,4,3,2,1}
     for i = 1, do
@@ -16,6 +9,13 @@ function autobuymarkets2()
 
             game:GetService("ReplicatedStorage").Network.CustomMerchants_Purchase:InvokeServer(unpack(args))
         end
+    end
+end
+
+function automarket()
+    while _G.AutoMarket = true do
+        autobuymarkets2()
+        wait(600)
     end
 end
 
